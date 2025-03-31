@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { sum } from '../src/utils/sum';
+import { sum } from 'lib-template';
 
 describe('sum function', () => {
   it('should add two positive numbers correctly', () => {
@@ -16,4 +16,4 @@ describe('sum function', () => {
     expect(sum(5, 0)).toBe(5);
     expect(sum(0, 0)).toBe(0);
   });
-}); 
+});

@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { multiply } from '../src/utils/multiply';
+import { multiply } from 'lib-template';
 
 describe('multiply function', () => {
   it('should multiply two positive numbers correctly', () => {
@@ -16,4 +16,4 @@ describe('multiply function', () => {
     expect(multiply(5, 0)).toBe(0);
     expect(multiply(0, 0)).toBe(0);
   });
-}); 
+});
