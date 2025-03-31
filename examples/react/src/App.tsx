@@ -2,7 +2,7 @@ import { useState } from 'react';
 // In a real app, you would import from the npm package
 // import { sum, multiply } from 'lib-template';
 // For this demo, we assume the library is built and linked locally
-import { sum, multiply } from '../../../dist/index.esm';
+import { sum, multiply } from 'lib-template';
 import './App.css';
 
 function App() {
@@ -28,7 +28,7 @@ function App() {
       calculatedResult = multiply(a, b);
       setResult(`Product: ${calculatedResult}`);
     }
-    
+
     setOperation(op);
   };
 
@@ -52,13 +52,13 @@ function App() {
           />
         </div>
         <div className="buttons">
-          <button 
+          <button
             onClick={() => handleCalculate('sum')}
             className={operation === 'sum' ? 'active' : ''}
           >
             Sum
           </button>
-          <button 
+          <button
             onClick={() => handleCalculate('multiply')}
             className={operation === 'multiply' ? 'active' : ''}
           >
@@ -71,4 +71,4 @@ function App() {
   );
 }
 
-export default App; 
+export default App;

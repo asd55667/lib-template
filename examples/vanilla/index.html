@@ -40,7 +40,7 @@
 </head>
 <body>
   <h1>Lib Template Demo</h1>
-  
+
   <div class="calculator">
     <h2>Calculator</h2>
     <div>
@@ -57,12 +57,12 @@
   <script type="module">
     // You would typically import from an npm package
     // But for this demo, we'll assume the library is built and served locally
-    import { sum, multiply } from '../../dist/index.esm.js';
+    import { sum, multiply } from 'lib-template';
 
     document.getElementById('sumBtn').addEventListener('click', () => {
       const num1 = parseFloat(document.getElementById('num1').value);
       const num2 = parseFloat(document.getElementById('num2').value);
-      
+
       if (!isNaN(num1) && !isNaN(num2)) {
         const result = sum(num1, num2);
         document.getElementById('result').textContent = `Sum: ${result}`;
@@ -74,7 +74,7 @@
     document.getElementById('multiplyBtn').addEventListener('click', () => {
       const num1 = parseFloat(document.getElementById('num1').value);
       const num2 = parseFloat(document.getElementById('num2').value);
-      
+
       if (!isNaN(num1) && !isNaN(num2)) {
         const result = multiply(num1, num2);
         document.getElementById('result').textContent = `Product: ${result}`;
@@ -84,4 +84,4 @@
     });
   </script>
 </body>
-</html> 
+</html>

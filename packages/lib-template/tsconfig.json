@@ -21,14 +21,11 @@
     "forceConsistentCasingInFileNames": true,
     "outDir": "dist",
     "declarationDir": "dist",
-    "rootDir": ".",
+    "rootDir": "src",
     "baseUrl": "."
   },
   "include": [
-    "packages/**/*.ts",
-    "examples/**/*.ts",
-    "examples/**/*.tsx",
-    "examples/**/*.vue",
+    "src/**/*.ts",
     ],
-  "exclude": ["node_modules", "dist", "examples", "test"]
+  "exclude": ["node_modules", "dist", "test"]
 }
