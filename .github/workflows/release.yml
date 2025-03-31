@@ -16,8 +16,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -37,7 +35,7 @@ jobs:
         id: build
         run: pnpm build
 
-      - name: Version and Publish
+      - name: Create Version PR or Publish to NPM
         id: changesets
         uses: changesets/action@v1.4.9
         with:
@@ -45,12 +43,6 @@ jobs:
           title: "chore(release): version packages"
           version: node .github/changeset-version.js
           publish: pnpm changeset publish
-          createGithubReleases: true
-          # Skip PR creation and publish directly
-          snapshot: false
-          # This configuration bypasses PR creation
-          # Setting to false makes the action directly publish if there are changesets
-          publishOnly: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
