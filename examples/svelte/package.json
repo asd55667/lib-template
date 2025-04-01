@@ -1,6 +1,6 @@
 {
   "name": "svelte-example",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Svelte example for lib-template",
   "scripts": {
     "start": "vite",
