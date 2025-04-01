@@ -88,7 +88,7 @@ function processChangesetFiles() {
     writePackageJson(path.join(rootDir, 'package.json'), rootPackageJson);
 
     // Update all package.json files in example directories
-    updateExamplePackageJsons(maxBumpType);
+    // updateExamplePackageJsons(maxBumpType);
 
     console.log(`Updated versions with ${maxBumpType} bump`);
 }
