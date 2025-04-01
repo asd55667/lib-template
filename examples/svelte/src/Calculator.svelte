@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { sum, multiply } from 'lib-template';
+  import { sum, multiply } from '@wcw2025/lib-template';
 
   let firstNumber: number | null = null;
   let secondNumber: number | null = null;

@@ -27,7 +27,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "lib-template": "workspace:*"
+    "@wcw2025/lib-template": "workspace:*"
   },
   "devDependencies": {
     "@changesets/cli": "^2.28.1",

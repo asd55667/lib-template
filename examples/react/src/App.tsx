@@ -1,8 +1,8 @@
 import { useState } from 'react';
 // In a real app, you would import from the npm package
-// import { sum, multiply } from 'lib-template';
+// import { sum, multiply } from '@wcw2025/lib-template';
 // For this demo, we assume the library is built and linked locally
-import { sum, multiply } from 'lib-template';
+import { sum, multiply } from '@wcw2025/lib-template';
 import './App.css';
 
 function App() {

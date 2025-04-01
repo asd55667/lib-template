@@ -8,7 +8,7 @@ importers:
 
   .:
     dependencies:
-      lib-template:
+      '@wcw2025/lib-template':
         specifier: workspace:*
         version: link:packages/lib-template
     devDependencies:
@@ -76,9 +76,6 @@ importers:
 
   examples/solid:
     dependencies:
-      lib-template:
-        specifier: workspace:*
-        version: link:../../packages/lib-template
       solid-js:
         specifier: ^1.8.5
         version: 1.9.5
@@ -94,10 +91,6 @@ importers:
         version: 2.11.6(solid-js@1.9.5)(vite@5.4.15)
 
   examples/svelte:
-    dependencies:
-      lib-template:
-        specifier: workspace:*
-        version: link:../../packages/lib-template
     devDependencies:
       '@sveltejs/vite-plugin-svelte':
         specifier: ^3.0.1

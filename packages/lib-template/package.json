@@ -1,5 +1,5 @@
 {
-  "name": "lib-template",
+  "name": "@wcw2025/lib-template",
   "version": "0.1.2",
   "description": "TypeScript library template",
   "type": "module",

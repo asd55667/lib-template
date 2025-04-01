@@ -1,5 +1,5 @@
 import { Component, createSignal, Show } from 'solid-js';
-import { sum, multiply } from 'lib-template';
+import { sum, multiply } from '@wcw2025/lib-template';
 
 export const Calculator: Component = () => {
   const [firstNumber, setFirstNumber] = createSignal<number | null>(null);

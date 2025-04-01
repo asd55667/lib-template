@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { sum } from 'lib-template';
+import { sum } from '@wcw2025/lib-template';
 
 describe('sum function', () => {
   it('should add two positive numbers correctly', () => {

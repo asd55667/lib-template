@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { multiply } from 'lib-template';
+import { multiply } from '@wcw2025/lib-template';
 
 describe('multiply function', () => {
   it('should multiply two positive numbers correctly', () => {

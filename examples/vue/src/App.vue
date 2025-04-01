@@ -37,9 +37,9 @@
 <script lang="ts">
 import { defineComponent, ref } from 'vue';
 // In a real app, you would import from the npm package
-// import { sum, multiply } from 'lib-template';
+// import { sum, multiply } from '@wcw2025/lib-template';
 // For this demo, we assume the library is built and linked locally
-import { sum, multiply } from 'lib-template';
+import { sum, multiply } from '@wcw2025/lib-template';
 
 export default defineComponent({
   name: 'App',
