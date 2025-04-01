@@ -20,7 +20,8 @@
     "test:examples": "node scripts/test-examples.js",
     "changeset": "changeset",
     "version": "changeset version",
-    "publish": "pnpm build && changeset publish"
+    "publish": "pnpm build && changeset publish",
+    "update-versions": "node scripts/update-versions.js"
   },
   "keywords": [],
   "author": "",

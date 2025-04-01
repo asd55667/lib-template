@@ -10,3 +10,6 @@ import { exec } from "child_process"
 // See https://github.com/changesets/changesets/issues/421.
 exec("npx changeset version")
 exec("pnpm install")
+
+// update versions in all package.json files
+exec("node .github/update-versions.js")
