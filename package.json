@@ -17,11 +17,7 @@
     "test:coverage": "vitest run --coverage",
     "lint": "eslint --ext .js,.ts src",
     "format": "prettier --write \"src/**/*.ts\"",
-    "test:examples": "node scripts/test-examples.js",
-    "changeset": "changeset",
-    "version": "changeset version",
-    "publish": "pnpm build && changeset publish",
-    "update-versions": "node scripts/update-versions.js"
+    "test:examples": "node scripts/test-examples.js"
   },
   "keywords": [],
   "author": "",
