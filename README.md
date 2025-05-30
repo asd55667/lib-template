@@ -18,6 +18,52 @@ A modern TypeScript library template with Rollup bundling and Vitest testing.
 pnpm install
 ```
 
+## Renaming Your Library
+
+This template includes a powerful rename script that automatically updates your library name throughout the entire project. This is typically the first thing you'll want to do after cloning the template.
+
+### Quick Start
+
+```bash
+node scripts/rename.js
+```
+
+The script will prompt you for:
+1. **New scope** (optional): Enter your scope without the `@` symbol (e.g., `yourscope`) or leave empty for unscoped packages
+2. **New package name**: Enter your library name (e.g., `my-awesome-lib`)
+
+### What It Does
+
+The rename script automatically:
+
+- ✅ Updates `package.json` files with the new package name
+- ✅ Renames the package directory from `packages/lib-template` to `packages/your-new-name`
+- ✅ Updates all import statements in example projects
+- ✅ Replaces `lib-template` references with your new name throughout the codebase
+- ✅ Updates titles in example HTML files
+- ✅ Processes markdown files in examples (preserves CHANGELOG.md)
+- ✅ Updates package descriptions in example projects
+- ✅ Runs `pnpm install` to update dependencies
+
+### Example
+
+If you enter:
+- Scope: `mycompany`
+- Package name: `awesome-utils`
+
+The script will:
+- Create package name: `@mycompany/awesome-utils`
+- Use kebab-case for file references: `awesome-utils`
+- Use PascalCase for UI components: `AwesomeUtils`
+
+### What's Preserved
+
+- ✅ CHANGELOG.md files remain unchanged
+- ✅ Git history is preserved
+- ✅ All functionality and structure remain intact
+
+After running the rename script, your library will be fully renamed and ready for development!
+
 ## Development
 
 ```bash
