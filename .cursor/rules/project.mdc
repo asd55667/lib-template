@@ -1,0 +1,96 @@
+# TypeScript Library Template
+
+You are an expert TypeScript library developer working on this project, it runs in browsers and supports multiple frontend frameworks (React, Vue, Solid, Svelte, and Vanilla JS).
+
+## Project Structure & Context
+
+This is a **monorepo** using pnpm workspaces with the following structure:
+- `packages/**` - Main TypeScript library (ES modules, strict TypeScript)
+- `examples/` - Framework examples (vanilla, react, vue, solid, svelte)
+- Rollup for bundling (CommonJS + ESM outputs)
+- Vitest for testing
+- ESLint + Prettier for code quality
+
+## Code Style & Standards
+
+### TypeScript Guidelines
+- Use **strict TypeScript** configuration (noImplicitAny, strictNullChecks, etc.)
+- Target ES2018+ with ESNext modules
+- Always provide explicit type annotations for public APIs
+- Use proper generic constraints and utility types
+- Export types alongside implementations
+- Follow the existing pattern: `export { functionName } from './utils/functionName'`
+
+### File Organization
+- Place utilities in `packages/**/src/utils/`
+- Each utility should be in its own file with matching name
+- Export from main `index.ts` with named exports
+- Follow kebab-case for file names, camelCase for function names
+
+### Framework Compatibility
+- Write **framework-agnostic** core logic in the main library
+- Ensure DOM manipulation works across all browser environments
+- Consider React, Vue, Solid, and Svelte integration patterns
+- Provide TypeScript declarations for all public APIs
+- Test with all framework examples
+
+### Code Quality
+- Write concise, well-documented functions
+- Include JSDoc comments for public APIs
+- Use modern JavaScript/TypeScript features (async/await, destructuring, etc.)
+- Follow functional programming principles where appropriate
+- Ensure tree-shaking compatibility
+
+### Testing & Examples
+- Write unit tests with Vitest for all new utilities
+- Create example implementations for each supported framework
+- Test both development and production builds
+- Ensure examples work with the library's build outputs
+
+### Build & Distribution
+- Maintain dual CommonJS and ESM builds
+- Generate proper TypeScript declarations
+- Keep bundle size minimal
+- Export only what's necessary from the main package
+
+## Framework-Specific Considerations
+
+### React Components
+- Use modern React patterns (hooks, functional components)
+- Provide proper TypeScript props interfaces
+- Support both controlled and uncontrolled patterns where applicable
+
+### Vue Components
+- Support Vue 3 composition API
+- Provide proper TypeScript support with defineProps/defineEmits
+- Consider reactivity patterns
+
+### Solid & Svelte
+- Leverage framework-specific reactivity systems
+- Ensure proper cleanup and lifecycle management
+
+### Vanilla JS
+- Provide clean, imperative APIs
+- Ensure proper event handling and cleanup
+- Support modern browser APIs
+
+## Development Workflow
+
+When adding new features:
+1. Start with framework-agnostic implementation in `packages/**/src/`
+2. Export from main index.ts
+3. Add TypeScript types and JSDoc documentation
+4. Write unit tests with Vitest
+5. Create examples for each framework in `examples/`
+6. Test with `pnpm test:examples`
+7. Ensure builds work correctly
+
+
+## Dependencies & Imports
+
+- Keep the main library dependency-free for maximum compatibility
+- Use devDependencies for build tools only
+- Prefer standard browser APIs over external libraries
+- When adding dependencies, consider impact on bundle size and framework compatibility
+
+Focus on creating high-quality, reusable code that work seamlessly across all supported frameworks while maintaining excellent TypeScript support and documentation.
