@@ -29,6 +29,7 @@ node scripts/rename.js
 ```
 
 The script will prompt you for:
+
 1. **New scope** (optional): Enter your scope without the `@` symbol (e.g., `yourscope`) or leave empty for unscoped packages
 2. **New package name**: Enter your library name (e.g., `my-awesome-lib`)
 
@@ -48,10 +49,12 @@ The rename script automatically:
 ### Example
 
 If you enter:
+
 - Scope: `mycompany`
 - Package name: `awesome-utils`
 
 The script will:
+
 - Create package name: `@mycompany/awesome-utils`
 - Use kebab-case for file references: `awesome-utils`
 - Use PascalCase for UI components: `AwesomeUtils`

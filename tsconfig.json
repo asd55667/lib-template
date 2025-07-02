@@ -28,7 +28,7 @@
     "packages/**/*.ts",
     "examples/**/*.ts",
     "examples/**/*.tsx",
-    "examples/**/*.vue",
-    ],
+    "examples/**/*.vue"
+  ],
   "exclude": ["node_modules", "dist", "examples", "test"]
 }

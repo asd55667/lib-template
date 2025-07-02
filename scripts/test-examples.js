@@ -22,7 +22,9 @@ function getScriptCommand(exampleName, scriptName) {
       return null;
     }
 
-    const packageJson = JSON.parse(execSync(`cat ${packageJsonPath}`).toString());
+    const packageJson = JSON.parse(
+      execSync(`cat ${packageJsonPath}`).toString()
+    );
     const scripts = packageJson.scripts || {};
 
     // Handle variations of script names (e.g., start vs dev)
@@ -59,26 +61,42 @@ function testCommand(exampleName, command) {
 
         // Give the dev server some time to start up
         setTimeout(() => {
-          console.log(`✅ ${exampleName}: '${command}' started successfully, shutting down...`);
+          console.log(
+            `✅ ${exampleName}: '${command}' started successfully, shutting down...`
+          );
           // Properly terminate the process
           devProcess.kill();
           resolve({ passed: true, skipped: false });
         }, 7000); // Wait 7 seconds
 
         devProcess.on('error', (error) => {
-          console.error(`❌ ${exampleName}: '${command}' failed with error:`, error.message);
-          resolve({ passed: false, skipped: false, name: exampleName, command });
+          console.error(
+            `❌ ${exampleName}: '${command}' failed with error:`,
+            error.message
+          );
+          resolve({
+            passed: false,
+            skipped: false,
+            name: exampleName,
+            command,
+          });
         });
       });
     } else {
-      execSync(`cd ${join(examplesDir, exampleName)} && pnpm run ${scriptName}`, {
-        stdio: 'inherit'
-      });
+      execSync(
+        `cd ${join(examplesDir, exampleName)} && pnpm run ${scriptName}`,
+        {
+          stdio: 'inherit',
+        }
+      );
       console.log(`✅ ${exampleName}: '${command}' passed`);
       return { passed: true, skipped: false };
     }
   } catch (error) {
-    console.error(`❌ ${exampleName}: '${command}' failed with error:`, error.message);
+    console.error(
+      `❌ ${exampleName}: '${command}' failed with error:`,
+      error.message
+    );
     return { passed: false, skipped: false, name: exampleName, command };
   }
 }
@@ -87,8 +105,8 @@ function testCommand(exampleName, command) {
 async function runTests() {
   const failedExamples = [];
   const examples = readdirSync(examplesDir, { withFileTypes: true })
-    .filter(dirent => dirent.isDirectory())
-    .map(dirent => dirent.name);
+    .filter((dirent) => dirent.isDirectory())
+    .map((dirent) => dirent.name);
 
   console.log(`Found ${examples.length} examples: ${examples.join(', ')}`);
 
@@ -115,14 +133,14 @@ async function runTests() {
     process.exit(0);
   } else {
     console.error('❌ The following examples failed:');
-    failedExamples.forEach(failed => {
+    failedExamples.forEach((failed) => {
       console.error(`   - ${failed}`);
     });
     process.exit(1);
   }
 }
 
-runTests().catch(error => {
+runTests().catch((error) => {
   console.error('Error running tests:', error);
   process.exit(1);
 });

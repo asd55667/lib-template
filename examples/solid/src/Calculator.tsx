@@ -11,7 +11,9 @@ export const Calculator: Component = () => {
     if (firstNumber() !== null && secondNumber() !== null) {
       const calculatedResult = sum(firstNumber()!, secondNumber()!);
       setResult(calculatedResult);
-      setOperation(`${firstNumber()} + ${secondNumber()} = ${calculatedResult}`);
+      setOperation(
+        `${firstNumber()} + ${secondNumber()} = ${calculatedResult}`
+      );
     }
   };
 
@@ -19,7 +21,9 @@ export const Calculator: Component = () => {
     if (firstNumber() !== null && secondNumber() !== null) {
       const calculatedResult = multiply(firstNumber()!, secondNumber()!);
       setResult(calculatedResult);
-      setOperation(`${firstNumber()} × ${secondNumber()} = ${calculatedResult}`);
+      setOperation(
+        `${firstNumber()} × ${secondNumber()} = ${calculatedResult}`
+      );
     }
   };
 
@@ -53,14 +57,10 @@ export const Calculator: Component = () => {
         <button onClick={calculateProduct}>Multiply Numbers</button>
       </div>
       <Show when={result() !== null}>
-        <div class="result">
-          Result: {result()}
-        </div>
+        <div class="result">Result: {result()}</div>
       </Show>
       <Show when={operation()}>
-        <div class="result">
-          Operation: {operation()}
-        </div>
+        <div class="result">Operation: {operation()}</div>
       </Show>
     </div>
   );
