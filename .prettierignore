@@ -1,0 +1,10 @@
+# Ignore artifacts
+dist
+node_modules
+
+# Ignore github workflow
+.github
+
+# Ignore Changelog
+
+CHANGELOG.md
