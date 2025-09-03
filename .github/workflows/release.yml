@@ -46,3 +46,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           NODE_ENV: "production"
+
+      - name: Publish to GitHub Packages
+        run: node .github/publish-private-packages.js
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_GITHUB_PACKAGES }}
