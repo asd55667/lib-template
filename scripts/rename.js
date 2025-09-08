@@ -106,6 +106,13 @@ const updatePackageJsonFiles = async (currentInfo, newInfo) => {
     new RegExp(`"${currentInfo.name}"`, 'g'),
     `"${newInfo.newFullName}"`
   );
+
+  // Replace repository url if it contains lib-template
+  rootPkgContent = rootPkgContent.replace(
+    /("url":\s*".*github\.com\/[^/]+\/)lib-template(\.git")/g,
+    `$1${newInfo.newPackageName}$2`
+  );
+
   await fs.writeFile(rootPkgPath, rootPkgContent, 'utf8');
 
   // Update package directory name
